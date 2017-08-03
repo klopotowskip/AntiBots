@@ -1,0 +1,7 @@
+name: AntiDDoS
+version: 1.0
+author: pietrek777
+main: pl.mccode.antiddoscommands:
+  antiddos:
+    description: Main command of AntiDDoS plugin
+    usage: /antiddos
