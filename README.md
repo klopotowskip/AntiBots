@@ -88,7 +88,7 @@ And finally plugin is ready. Now you can set up [permissions](#permissions). I k
   *  **/antiddos help** – lists all plugin commands
   *  **/antiddos version** – displays plugin version
  
-##Permissions
+## Permissions
   * **antiddos.nokick** – makes player non-kickalbe (see [**/antiddos protect** command](#Commands))
   * **antiddos.protect** – allows using **/antiddos protect** command
   * **antiddos.disable** – allows using **/antiddos disable** command
@@ -98,7 +98,7 @@ And finally plugin is ready. Now you can set up [permissions](#permissions). I k
   * **antiddos.version** – allows using **/antiddos version** command
   * **antiddos.&ast;** – Grant all this plugin permissions
   
-##FAQ
+## FAQ
 **Q: It's not working!**
 A:  Firstly check if data, that you've entered to **config.yml** and **verification.ini** are valid. If plugin still doesn't work, visit [Online YAML and ini parser](http://www.unserialize.me/), to make sure, that both files are parseable. If this didn't fixed the problem, [contact me](#contact), or [start a new issue (https://github.com/pietrek777/AntiDDoS/issues).
 
