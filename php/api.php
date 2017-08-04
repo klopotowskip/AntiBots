@@ -1,4 +1,4 @@
-<?php
+<?php// AntiDDoS Plugin by pietrek777// Distributed on MIT License// This project on Github: https://github.com/pietrek777/AntiDDoS
   require_once 'resources/Utils.php';
   $nickname = @$_GET['nickname'];  if($allowedips){	  if(!in_array(getClientIp(), $allowedips)){		  header('HTTP/1.1 403 Forbidden');		  die('403 – Forbidden');	  }  }
   try{    if(!$nickname || (!ctype_alnum($nickname))){      header('HTTP/1.1 400 Bad Request');		  die('400 – Bad Request');    }

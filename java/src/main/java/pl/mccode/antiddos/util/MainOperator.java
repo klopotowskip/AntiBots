@@ -1,3 +1,8 @@
+// AntiDDoS Plugin by pietrek777
+// Distributed on MIT License
+// This project on Github: https://github.com/pietrek777/AntiDDoS
+
+
 package pl.mccode.antiddos.util;
 
 import org.apache.http.HttpResponse;

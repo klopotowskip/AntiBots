@@ -1,4 +1,4 @@
-<?php
+<?php// AntiDDoS Plugin by pietrek777// Distributed on MIT License// This project on Github: https://github.com/pietrek777/AntiDDoS
 $ini = getIni();$dbname = "`".str_replace("`","``",$ini['database-name'])."`";$tablename = "`".str_replace("`","``",$ini['table-name'])."`";
 $sitekey = $ini['site-key'];$secretkey = $ini['secret-key'];
 $header = $ini['header'];$title = $ini['title'];$placeholder = $ini['placeholder'];$submit = $ini['submit'];

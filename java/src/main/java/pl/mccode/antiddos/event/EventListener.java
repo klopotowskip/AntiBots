@@ -1,3 +1,7 @@
+// AntiDDoS Plugin by pietrek777
+// Distributed on MIT License
+// This project on Github: https://github.com/pietrek777/AntiDDoS
+
 package pl.mccode.antiddos.event;
 
 import org.bukkit.event.EventHandler;
