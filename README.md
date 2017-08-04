@@ -90,7 +90,7 @@ And finally plugin is ready. Now you can set up [permissions](#permissions). I k
   *  **/antiddos help** – lists all plugin commands
   *  **/antiddos version** – displays plugin version
  
-##Permissions
+## Permissions
   * **antiddos.nokick** – makes player non-kickalbe (see [**/antiddos protect** command](#Commands))
   * **antiddos.protect** – allows using **/antiddos protect** command
   * **antiddos.disable** – allows using **/antiddos disable** command
@@ -98,7 +98,7 @@ And finally plugin is ready. Now you can set up [permissions](#permissions). I k
   * **antiddos.default** – allows using **/antiddos default** command
   * **antiddos.help** – allows using **/antiddos help** command
   * **antiddos.version** – allows using **/antiddos version** command
-  * **antiddos.&ast;** – Grant all this plugin permissions
+  * **antiddos.&ast;** – Grant all permissions for this plugin
   
 ## FAQ
 **Q: It's not working!**
