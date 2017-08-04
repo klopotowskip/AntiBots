@@ -46,6 +46,7 @@ You can also download builded packages, ready to go from [here](https://github.c
   -  **secret-key** – your *reCAPTCHA* secret key
   - **allowed_api_ips** (optional) – Ip's allowed to use the verified-users API, separated by space (e.g. if your Spigot server will be requesting to API from IP 1.2.3.4, add this IP to this setting, then API will be accessed only from 1.2.3.4 IP. Clients with every other IP will receive [403 Response Code](https://en.wikipedia.org/wiki/HTTP_403). If your server IP for outer connections is not persistent, or you don't know this IP, leave this setting empty)
  * Now open your domain (or where you placed the files). If you see reCAPTCHA with checkbox and "I'm not a robot" label, you configured reCAPTCHA well ([image with verification configured properly](http://i.imgur.com/24xFf1Q))
+ 
    > **verification.ini**  template is also available [here](https://pastebin.com/4rudZNiA)
 
 
@@ -68,8 +69,8 @@ You can also download builded packages, ready to go from [here](https://github.c
 And finally plugin is ready. Now you can set up [permissions](#permissions). I know, that verification may be hard, so if something is not working, see [FAQ](#FAQ) section. If there's no answer to your problem there, [contact me](#contact), or [start a new issue](https://github.com/pietrek777/AntiDDoS/issues).
 
 ## Commands
-> Note
-> Params in **[angle braces]** are required, those in **&lt;square braces&gt;** are optional
+> **Note**
+> Params in **&lt;angle braces&gt;** are required, those in **[square braces]** are optional
 
  * **/antiddos protect** (alias: **/antiddos enable**) – enables AntiDDoS protection
     - Params
@@ -79,5 +80,46 @@ And finally plugin is ready. Now you can set up [permissions](#permissions). I k
           - force-kick-all – kick all players, without any exceptions
       - [wipe] – enables database wiping
   - Examples
-     - **/antiddos protect no-kick** – enable protection, kick nobody, don't truncate verified users database
-     - **/antiddos enable kick-all wipe** – enable protection, kick all players without *antiddos.nokick* permission, truncate verified users database
+     - **/antiddos protect no-kick** – enables protection, kicks nobody, doesn't truncate verified users database
+     - **/antiddos enable kick-all wipe** – enables protection, kicks all players without *antiddos.nokick* permission, truncates verified users database
+ * **/antiddos disable** – disables protection
+ * **/antiddos wipe** – truncates verified users database
+  *  **/antiddos default &lt;on/off&gt;** – enables/disables protection on launch (see **protection ➔ enabled-default** in **config.yml**)
+  *  **/antiddos help** – lists all plugin commands
+  *  **/antiddos version** – displays plugin version
+ 
+##Permissions
+  * **antiddos.nokick** – makes player non-kickalbe (see [**/antiddos protect** command](#Commands))
+  * **antiddos.protect** – allows using **/antiddos protect** command
+  * **antiddos.disable** – allows using **/antiddos disable** command
+  * **antiddos.wipe** – allows truncating database using **/antiddos protect** or **/antiddos wipe** command
+  * **antiddos.default** – allows using **/antiddos default** command
+  * **antiddos.help** – allows using **/antiddos help** command
+  * **antiddos.version** – allows using **/antiddos version** command
+  * **antiddos.&ast;** – Grant all this plugin permissions
+  
+##FAQ
+**Q: It's not working!**
+A:  Firstly check if data, that you've entered to **config.yml** and **verification.ini** are valid. If plugin still doesn't work, visit [Online YAML and ini parser](http://www.unserialize.me/), to make sure, that both files are parseable. If this didn't fixed the problem, [contact me](#contact), or [start a new issue (https://github.com/pietrek777/AntiDDoS/issues).
+
+**Q: I found a bug. What can I do with it?**
+A: You can report it [here](https://github.com/pietrek777/AntiDDoS/issues). I will fix it as soon as possible. Thanks in advance for any bugs reports!
+
+**Q: I have an idea, that can make this plugin better!**
+A:  Tell me more about it! [Contact me](#contact), or [create a new pull request](https://github.com/pietrek777/AntiDDoS/pulls)!
+
+**Q: Do you know any good free hosting?**
+A:  To be honest, ~~all~~ most of free hostings sucks. Annoying ads, limited FTP access etc. are standard there. If you want your verification site to be solid, always available and without any ads, you should consider paid hosting.
+
+**Q: I want to remake this software by myself. Can I?**
+A:  Surely, you can. AntiDDoS is on [MIT license](https://github.com/pietrek777/AntiDDoS/blob/master/LICENSE), so you can fork it, make some changes and publish it. You can even sell your remake, but you should give a link to the orginal.
+
+**Q: There's no answer for my question here/I want to ask you something**
+A:  [Contact me](#contact), I will answer you as soon as possible :)
+
+## Contact
+Email address: [pietrek777@gmail.com](mailto:pietrek777@gmail.com)
+
+
+-------
+**AntiDDoS plugin by [pietrek777](https://github.com/pietrek777) – Distributed on [MIT License](https://opensource.org/licenses/MIT)**
