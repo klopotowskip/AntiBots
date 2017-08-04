@@ -66,7 +66,7 @@ You can also download builded packages, ready to go from [here](https://github.c
   -  **~~response ➔ result~~** (deprecated) – just leave it as it is
  * Restart your server (or type */reload* command)
 
-And finally plugin is ready. Now you can set up [permissions](#permissions). I know, that verification may be hard, so if something is not working, see [FAQ](#FAQ) section. If there's no answer to your problem there, [contact me](#contact), or [start a new issue](https://github.com/pietrek777/AntiDDoS/issues).
+And finally plugin is ready. Now you can set up [permissions](#permissions). I know, that instalation may be hard, so if something is not working, see [FAQ](#faq) section. If there's no answer to your problem there, [contact me](#contact), or [start a new issue](https://github.com/pietrek777/AntiDDoS/issues).
 
 ## Commands
 > **Note**
@@ -89,7 +89,7 @@ And finally plugin is ready. Now you can set up [permissions](#permissions). I k
   *  **/antiddos version** – displays plugin version
  
 ## Permissions
-  * **antiddos.nokick** – makes player non-kickalbe (see [**/antiddos protect** command](#Commands))
+  * **antiddos.nokick** – makes player non-kickalbe (see [**/antiddos protect** command](#commands))
   * **antiddos.protect** – allows using **/antiddos protect** command
   * **antiddos.disable** – allows using **/antiddos disable** command
   * **antiddos.wipe** – allows truncating database using **/antiddos protect** or **/antiddos wipe** command
