@@ -102,21 +102,27 @@ And finally plugin is ready. Now you can set up [permissions](#permissions). I k
   
 ## FAQ
 **Q: It's not working!**
-A:  Firstly check if data, that you've entered to **config.yml** and **verification.ini** are valid. If plugin still doesn't work, visit <a href="http://www.unserialize.me/" target="_blank">Online YAML and ini parser</a>, to make sure, that both files are parseable. If this didn't fixed the problem, [contact me](#contact), or [start a new issue (https://github.com/pietrek777/AntiDDoS/issues).
+
+A:  Firstly check if data, that you've entered to **config.yml** and **verification.ini** are valid. If plugin still doesn't work, visit <a href="http://www.unserialize.me/" target="_blank">Online YAML and ini parser</a>, to make sure, that both files are parseable. If this didn't fixed the problem, [contact me](#contact), or [start a new issue](https://github.com/pietrek777/AntiDDoS/issues).
 
 **Q: I found a bug. What can I do with it?**
-A: You can report it <a href="https://github.com/pietrek777/AntiDDoS/issues" target="_blank">start a new issue</a>. I will fix it as soon as possible. Thanks in advance for any bugs reports!
+
+A: You can report it <a href="https://github.com/pietrek777/AntiDDoS/issues" target="_blank">here</a>. I will fix it as soon as possible. Thanks in advance for any bugs reports!
 
 **Q: I have an idea, that can make this plugin better!**
+
 A:  Tell me more about it! [Contact me](#contact), or [create a new pull request](https://github.com/pietrek777/AntiDDoS/pulls)!
 
 **Q: Do you know any good free hosting?**
+
 A:  To be honest, ~~all~~ most of free hostings sucks. Annoying ads, limited FTP access etc. are standard there. If you want your verification site to be solid, always available and without any ads, you should consider paid hosting.
 
 **Q: I want to remake this software by myself. Can I?**
+
 A:  Surely, you can. AntiDDoS is on <a href="https://github.com/pietrek777/AntiDDoS/blob/master/LICENSE" target="_blank">MIT license</a>, so you can fork it, make some changes and publish it. You can even sell your remake, but you should give a link to the orginal.
 
 **Q: There's no answer for my question here/I want to ask you something**
+
 A:  [Contact me](#contact), I will answer you as soon as possible :)
 
 ## Contact
