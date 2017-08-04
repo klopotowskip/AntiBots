@@ -100,7 +100,7 @@ And finally plugin is ready. Now you can set up [permissions](#permissions). I k
   * **antiddos.version** – allows using **/antiddos version** command
   * **antiddos.&ast;** – Grant all this plugin permissions
   
-##FAQ
+## FAQ
 **Q: It's not working!**
 A:  Firstly check if data, that you've entered to **config.yml** and **verification.ini** are valid. If plugin still doesn't work, visit <a href="http://www.unserialize.me/" target="_blank">Online YAML and ini parser</a>, to make sure, that both files are parseable. If this didn't fixed the problem, [contact me](#contact), or [start a new issue (https://github.com/pietrek777/AntiDDoS/issues).
 
