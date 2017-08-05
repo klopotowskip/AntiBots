@@ -2,6 +2,7 @@ name: AntiBots
 version: 1.0.1
 author: pietrek777
 main: pl.mccode.antibots.Main
+commands:
   antibots:
     description: Main command of AntiBots plugin
     usage: /antibots
