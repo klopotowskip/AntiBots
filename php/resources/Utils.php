@@ -1,4 +1,4 @@
-<?php// AntiDDoS Plugin by pietrek777// Distributed on MIT License// This project on Github: https://github.com/pietrek777/AntiDDoS
+<?php// AntiBots Plugin by pietrek777// Distributed on MIT License// This project on Github: https://github.com/pietrek777/AntiBots
 $ini = getIni();$dbname = "`".str_replace("`","``",$ini['database-name'])."`";$tablename = "`".str_replace("`","``",$ini['table-name'])."`";
 $sitekey = $ini['site-key'];$secretkey = $ini['secret-key'];
 $header = $ini['header'];$title = $ini['title'];$placeholder = $ini['placeholder'];$submit = $ini['submit'];

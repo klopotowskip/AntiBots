@@ -1,7 +1,7 @@
-name: AntiDDoS
-version: 1.0
+  name: AntiBots
+version: 1.0.1
 author: pietrek777
-main: pl.mccode.antiddoscommands:
-  antiddos:
-    description: Main command of AntiDDoS plugin
-    usage: /antiddos
+main: pl.mccode.antibots.Main:
+  antibots:
+    description: Main command of AntiBots plugin
+    usage: /antibots

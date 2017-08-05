@@ -1,15 +1,18 @@
-package pl.mccode.antiddos;
+// AntiBots Plugin by pietrek777
+// Distributed on MIT License
+// This project on Github: https://github.com/pietrek777/AntiBots
+package pl.mccode.antibots;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import pl.mccode.antiddos.command.CommandAntiddos;
-import pl.mccode.antiddos.event.EventListener;
+import pl.mccode.antibots.command.CommandAntibots;
+import pl.mccode.antibots.event.EventListener;
 
 public class Main extends JavaPlugin{
-	public static final String PLUGIN_PREFIX = ChatColor.translateAlternateColorCodes('&', "&9[&3AntiDDoS&9]&f");
+	public static final String PLUGIN_PREFIX = ChatColor.translateAlternateColorCodes('&', "&9[&3AntiBots&9]&f");
 
-	public static final String DDOS_PROTECTION_KEY = "protection.enabled-default";
+	public static final String BOTS_PROTECTION_KEY = "protection.enabled-default";
 	public static final String PLAYER_KICK_KEY = "protection.kick-message";
 	public static final String VERIFICATION_URL_KEY = "protection.verification-url";
 
@@ -39,7 +42,7 @@ public class Main extends JavaPlugin{
         instance = this;
 
         FileConfiguration config = getConfig();
-        config.addDefault(DDOS_PROTECTION_KEY, false);
+        config.addDefault(BOTS_PROTECTION_KEY, false);
         config.addDefault(PLAYER_KICK_KEY, "Please verify that you're not a robot. Visit %s");
         config.addDefault(VERIFICATION_URL_KEY, "http://example.com/verification.php");
 
@@ -60,9 +63,9 @@ public class Main extends JavaPlugin{
 
         getServer().getPluginManager().registerEvents(new EventListener(), this);
 
-        EventListener.ddosProtection = config.getBoolean(DDOS_PROTECTION_KEY);
+        EventListener.protection = config.getBoolean(BOTS_PROTECTION_KEY);
         EventListener.kickMessage = config.getString(PLAYER_KICK_KEY);
 
-        this.getCommand("antiddos").setExecutor(new CommandAntiddos());
+        this.getCommand("antibots").setExecutor(new CommandAntibots());
     }
 }

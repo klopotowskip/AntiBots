@@ -1,12 +1,12 @@
-// AntiDDoS Plugin by pietrek777
+// AntiBots Plugin by pietrek777
 // Distributed on MIT License
-// This project on Github: https://github.com/pietrek777/AntiDDoS
+// This project on Github: https://github.com/pietrek777/AntiBots
 
-package pl.mccode.antiddos.util;
+package pl.mccode.antibots.util;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
-import pl.mccode.antiddos.Main;
+import pl.mccode.antibots.Main;
 
 public class ConfigDataProvider {
 	private static ConfigDataProvider instance = null;
@@ -80,7 +80,7 @@ public class ConfigDataProvider {
 	private ConfigDataProvider(){
 		FileConfiguration config = Main.config();
 
-		this.protection = config.getBoolean(Main.DDOS_PROTECTION_KEY);
+		this.protection = config.getBoolean(Main.BOTS_PROTECTION_KEY);
 		this.kickMessage = config.getString(Main.PLAYER_KICK_KEY);
 		this.verificationUrl = config.getString(Main.VERIFICATION_URL_KEY);
 		this.formattedMessage = String.format(ChatColor.translateAlternateColorCodes('&', getKickMessage()), getVerificationUrl());

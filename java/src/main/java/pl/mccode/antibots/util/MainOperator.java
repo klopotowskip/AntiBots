@@ -1,9 +1,9 @@
-// AntiDDoS Plugin by pietrek777
+// AntiBots Plugin by pietrek777
 // Distributed on MIT License
-// This project on Github: https://github.com/pietrek777/AntiDDoS
+// This project on Github: https://github.com/pietrek777/AntiBots
 
 
-package pl.mccode.antiddos.util;
+package pl.mccode.antibots.util;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -12,8 +12,8 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
-import pl.mccode.antiddos.Main;
-import pl.mccode.antiddos.event.EventListener;
+import pl.mccode.antibots.Main;
+import pl.mccode.antibots.event.EventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,17 +34,17 @@ public class MainOperator {
         if(code!=200) throw new Exception("Http response code: " + code);
 	}
 	public static void enableProtection(){
-		EventListener.ddosProtection = true;
+		EventListener.protection = true;
 	}
 	public static void disableProtection(){
-		EventListener.ddosProtection = false;
+		EventListener.protection = false;
 	}
 	public static void kickAll(){
 		Main.instance()
 				.getServer()
 				.getOnlinePlayers()
 				.stream()
-				.filter(x -> !x.hasPermission("antiddos.nokick"))
+				.filter(x -> !x.hasPermission("antibots.nokick"))
 				.forEach(x -> x.kickPlayer(kickMessage()));
 	}
 	public static void forceKickAll(){

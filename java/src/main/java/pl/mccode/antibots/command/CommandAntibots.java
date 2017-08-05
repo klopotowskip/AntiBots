@@ -1,17 +1,17 @@
-// AntiDDoS Plugin by pietrek777
+// AntiBots Plugin by pietrek777
 // Distributed on MIT License
-// This project on Github: https://github.com/pietrek777/AntiDDoS
+// This project on Github: https://github.com/pietrek777/AntiBots
 
-package pl.mccode.antiddos.command;
+package pl.mccode.antibots.command;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import pl.mccode.antiddos.Main;
-import pl.mccode.antiddos.util.MainOperator;
+import pl.mccode.antibots.Main;
+import pl.mccode.antibots.util.MainOperator;
 
-public class CommandAntiddos implements CommandExecutor{
+public class CommandAntibots implements CommandExecutor{
 	private static final String PROTECT_COMMAND = "protect";
     private static final String ENABLE_ALIAS_COMMAND = "enable";
 	private static final String DISABLE_COMMAND = "disable";
@@ -65,18 +65,18 @@ public class CommandAntiddos implements CommandExecutor{
 		return true;
 	}
 	private void printHelp(CommandSender sender){
-		if(!sender.hasPermission("antiddos.help")){
+		if(!sender.hasPermission("antibots.help")){
 			sendNoPermissionsMessage(sender);
 			return;
 		}
 		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9-------------"));
 		sender.sendMessage(Main.PLUGIN_PREFIX + " Commands:");
-		printCommand(sender, "/antiddos protect [no-kick/kick-all/force-kick-all] [wipe]", "Enables AntiDDOS protection");
-		printCommand(sender, "/antiddos disable", "Disables AntiDDOS protection");
-		printCommand(sender, "/antiddos wipe", "Wipes the AntiDDOS database");
-		printCommand(sender, "/antiddos default <true/false>", "Sets if AntiDDOS protection is enabled on start");
-		printCommand(sender, "/antiddos version", "Prints this plugin version");
-		printCommand(sender, "/antiddos help", "Prints this message");
+		printCommand(sender, "/antibots protect [no-kick/kick-all/force-kick-all] [wipe]", "Enables AntiBots protection");
+		printCommand(sender, "/antibots disable", "Disables AntiBots protection");
+		printCommand(sender, "/antibots wipe", "Wipes the AntiBots database");
+		printCommand(sender, "/antibots default <true/false>", "Sets if AntiBots protection is enabled on start");
+		printCommand(sender, "/antibots version", "Prints this plugin version");
+		printCommand(sender, "/antibots help", "Prints this message");
 
 
 	}
@@ -84,25 +84,25 @@ public class CommandAntiddos implements CommandExecutor{
 		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9" + command + "&f - " + desc));
 	}
 	private void printVersion(CommandSender sender){
-		if(!sender.hasPermission("antiddos.version")){
+		if(!sender.hasPermission("antibots.version")){
 			sendNoPermissionsMessage(sender);
 			return;
 		}
 		sender.sendMessage(Main.PLUGIN_PREFIX + " by pietrek777");
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Version v1.0"));
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9This plugin on SpigotMC: &f(soon)"));
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9This plugin on Github: &fhttps://github.com/pietrek777/AntiDDoS"));
+        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9This plugin on Github: &fhttps://github.com/pietrek777/AntiBots"));
 	}
 	private void disable(CommandSender sender){
-		if(!sender.hasPermission("antiddos.disable")){
+		if(!sender.hasPermission("antibots.disable")){
 			sendNoPermissionsMessage(sender);
 			return;
 		}
-		sender.sendMessage(Main.PLUGIN_PREFIX + "AntiDDoS Protection disabled");
+		sender.sendMessage(Main.PLUGIN_PREFIX + "AntiBots Protection disabled");
 		MainOperator.disableProtection();
 	}
 	private void protect(CommandSender sender, String[] strings){
-		if(!sender.hasPermission("antiddos.protect")){
+		if(!sender.hasPermission("antibots.protect")){
             sendNoPermissionsMessage(sender);
             return;
         }
@@ -112,7 +112,7 @@ public class CommandAntiddos implements CommandExecutor{
 			if(param.equals(NO_KICK_PARAM) || param.equals(KICK_ALL_PARAM) || param.equals(FORCE_KICK_ALL_PARAM)){
 				kicking = param;
 			} else if(param.equals(WIPE_PARAM)){
-			    if(!sender.hasPermission("antiddos.wipe")) {
+			    if(!sender.hasPermission("antibots.wipe")) {
                     sendNoPermissionsMessage(sender);
                     return;
                 }
@@ -120,7 +120,7 @@ public class CommandAntiddos implements CommandExecutor{
 			}
 		}
 		kicking = kicking == null ? NO_KICK_PARAM : kicking;
-		sender.sendMessage(Main.PLUGIN_PREFIX + "AntiDDOS protection enabled successfully (kicking: " + kicking.toUpperCase() + ", wipe: " + wipe.toString().toUpperCase() + ")");
+		sender.sendMessage(Main.PLUGIN_PREFIX + "AntiBots protection enabled successfully (kicking: " + kicking.toUpperCase() + ", wipe: " + wipe.toString().toUpperCase() + ")");
 		switch(kicking){
             case NO_KICK_PARAM:
                 MainOperator.enableProtection();
@@ -134,7 +134,7 @@ public class CommandAntiddos implements CommandExecutor{
                 MainOperator.forceKickAll();
                 break;
             default:
-                sender.sendMessage(Main.PLUGIN_PREFIX + "Usage: /antiddos protect [no-kick/kick-all/force-kick-all] [wipe]");
+                sender.sendMessage(Main.PLUGIN_PREFIX + "Usage: /antibots protect [no-kick/kick-all/force-kick-all] [wipe]");
                 return;
         }
 		if(wipe){
@@ -143,7 +143,7 @@ public class CommandAntiddos implements CommandExecutor{
 
 	}
 	private void wipe(CommandSender sender){
-		if(!sender.hasPermission("antiddos.wipe")){
+		if(!sender.hasPermission("antibots.wipe")){
 			sendNoPermissionsMessage(sender);
 			return;
 		}
@@ -156,16 +156,16 @@ public class CommandAntiddos implements CommandExecutor{
         }
 	}
 	private void setDefault(CommandSender sender, String bool){
-		if(!sender.hasPermission("antiddos.default")){
+		if(!sender.hasPermission("antibots.default")){
 			sendNoPermissionsMessage(sender);
 			return;
 		}
 		if(bool==null ||  bool.length()==0){
-			sender.sendMessage(Main.PLUGIN_PREFIX + "Usage: /antiddos default <true/false>");
+			sender.sendMessage(Main.PLUGIN_PREFIX + "Usage: /antibots default <true/false>");
 			return;
 		}
 		boolean b = Boolean.parseBoolean(bool);
-		Main.config().set(Main.DDOS_PROTECTION_KEY, b);
+		Main.config().set(Main.BOTS_PROTECTION_KEY, b);
 		Main.instance().saveConfig();
 		sender.sendMessage(Main.PLUGIN_PREFIX + "You changed default protection to " + b + " ");
 	}

@@ -2,13 +2,13 @@
 
 ----------
 
-# AntiDDoS
-#### AntiDDoS plugin for Spigot
+# AntiBots
+#### AntiBots plugin for Spigot
 
 ----------
 
 ## Features
-* Switchable AntiDDoS protection
+* Switchable AntiBots protection
 * Commands for enabling and disabling protection and for changing default settings
 * Verified users database can be easily truncated from game using command
 * Permission for every command
@@ -27,14 +27,14 @@ If you want to build this app from sourcecode, go to __java__ folder, open your 
 mvn clean package
 ```
 
-After that go to target folder. File __antiddos-x.x-jar-with-dependencies.jar__ 
-You can also download builded packages, ready to deploy on your server <a href="https://github.com/pietrek777/AntiDDoS/releases" target="_blank">here</a>
+After that go to target folder. File __antibots-x.x-jar-with-dependencies.jar__ 
+You can also download builded packages, ready to deploy on your server <a href="https://github.com/pietrek777/AntiBots/releases" target="_blank">here</a>
 
 ## Video tutorials
 (Coming soon)
 ## Instalation
 ### PHP side configuration
- * Download AntiDDoS package (or build it from sourcecode if you really want)
+ * Download AntiBots package (or build it from sourcecode if you really want)
  * Go to <a href="https://www.google.com/recaptcha/intro/" target="_blank">reCAPTCHA</a>, click *Get reCAPTCHA* button, and register your domain (any subdomains can be registered as well). Now you have your *Site key* and *Secret key* (save them somewhere, it will be required for futher configuration)
  * Open your FTP client (for example <a href="https://www.google.com/recaptcha/intro/" target="_blank">FileZilla</a>, it's free), log into your server and upload **content** of **php** folder to your domain root (or to other subfolder)
  *  Go to **./resources** and open **verification.ini**. Here you have to set some some settings:
@@ -52,8 +52,8 @@ You can also download builded packages, ready to deploy on your server <a href="
 
 ### Bukkit/Spigot side configuration
  * Place plugin JAR in your server **./plugins** folder, and run your server (or type */reload* command)
- * Go to **./plugins/AntiDDoS/** and open **config.yml**. There are also some things to configure here
-  - **protection ➔ enabled-default** – is AntiDDoS protection will be launched on start
+ * Go to **./plugins/AntiBots/** and open **config.yml**. There are also some things to configure here
+  - **protection ➔ enabled-default** – is AntiBots protection will be launched on start
   - **protection ➔ kick-message** – message, that will be displayed to not-verified players on kick
   - **protection ➔ verification-url** – URL, where players can verify their accounts (so if your domain is example.com and you placed files into domain root, the URL will be *http://example.com/*)
   - **connection ➔ host** – your domain name (e.g. http://example.com)
@@ -68,50 +68,50 @@ You can also download builded packages, ready to deploy on your server <a href="
 
    > **config.yml**  template is also available <a href="https://pastebin.com/tHwqNiSG" target="_blank">here</a>
 
-And finally plugin is ready. Now you can set up [permissions](#permissions). I know, that verification may be hard, so if something is not working, see [FAQ](#FAQ) section. If there's no answer to your problem there, [contact me](#contact), or <a href="https://github.com/pietrek777/AntiDDoS/issues" target="_blank">start a new issue</a>.
+And finally plugin is ready. Now you can set up [permissions](#permissions). I know, that verification may be hard, so if something is not working, see [FAQ](#FAQ) section. If there's no answer to your problem there, [contact me](#contact), or <a href="https://github.com/pietrek777/AntiBots/issues" target="_blank">start a new issue</a>.
 
 ## Commands
 > **Note**
 > Params in **&lt;angle braces&gt;** are required, those in **[square braces]** are optional
 
- * **/antiddos protect** (alias: **/antiddos enable**) – enables AntiDDoS protection
+ * **/antibots protect** (alias: **/antibots enable**) – enables AntiBots protection
     - Params
       -  [no-kick/kick-all/force-kick-all] – kicking mode
          - no-kick – without kicking any players
-          - kick-all – kick all players without *antiddos.nokick* permission (see [permissions](#permissions))
+          - kick-all – kick all players without *antibots.nokick* permission (see [permissions](#permissions))
           - force-kick-all – kick all players, without any exceptions
       - [wipe] – enables database wiping
   - Examples
-     - **/antiddos protect no-kick** – enables protection, kicks nobody, doesn't truncate verified users database
-     - **/antiddos enable kick-all wipe** – enables protection, kicks all players without *antiddos.nokick* permission, truncates verified users database
- * **/antiddos disable** – disables protection
- * **/antiddos wipe** – truncates verified users database
-  *  **/antiddos default &lt;on/off&gt;** – enables/disables protection on launch (see **protection ➔ enabled-default** in **config.yml**)
-  *  **/antiddos help** – lists all plugin commands
-  *  **/antiddos version** – displays plugin version
+     - **/antibots protect no-kick** – enables protection, kicks nobody, doesn't truncate verified users database
+     - **/antibots enable kick-all wipe** – enables protection, kicks all players without *antibots.nokick* permission, truncates verified users database
+ * **/antibots disable** – disables protection
+ * **/antibots wipe** – truncates verified users database
+  *  **/antibots default &lt;on/off&gt;** – enables/disables protection on launch (see **protection ➔ enabled-default** in **config.yml**)
+  *  **/antibots help** – lists all plugin commands
+  *  **/antibots version** – displays plugin version
  
 ## Permissions
-  * **antiddos.nokick** – makes player non-kickalbe (see [**/antiddos protect** command](#Commands))
-  * **antiddos.protect** – allows using **/antiddos protect** command
-  * **antiddos.disable** – allows using **/antiddos disable** command
-  * **antiddos.wipe** – allows truncating database using **/antiddos protect** or **/antiddos wipe** command
-  * **antiddos.default** – allows using **/antiddos default** command
-  * **antiddos.help** – allows using **/antiddos help** command
-  * **antiddos.version** – allows using **/antiddos version** command
-  * **antiddos.&ast;** – Grant all permissions for this plugin
+  * **antibots.nokick** – makes player non-kickalbe (see [**/antibots protect** command](#Commands))
+  * **antibots.protect** – allows using **/antibots protect** command
+  * **antibots.disable** – allows using **/antibots disable** command
+  * **antibots.wipe** – allows truncating database using **/antibots protect** or **/antibots wipe** command
+  * **antibots.default** – allows using **/antibots default** command
+  * **antibots.help** – allows using **/antibots help** command
+  * **antibots.version** – allows using **/antibots version** command
+  * **antibots.&ast;** – Grant all permissions for this plugin
   
 ## FAQ
 **Q: It's not working!**
 
-A:  Firstly check if data, that you've entered to **config.yml** and **verification.ini** are valid. If plugin still doesn't work, visit <a href="http://www.unserialize.me/" target="_blank">Online YAML and ini parser</a>, to make sure, that both files are parseable. If this didn't fixed the problem, [contact me](#contact), or [start a new issue](https://github.com/pietrek777/AntiDDoS/issues).
+A:  Firstly check if data, that you've entered to **config.yml** and **verification.ini** are valid. If plugin still doesn't work, visit <a href="http://www.unserialize.me/" target="_blank">Online YAML and ini parser</a>, to make sure, that both files are parseable. If this didn't fixed the problem, [contact me](#contact), or [start a new issue](https://github.com/pietrek777/AntiBots/issues).
 
 **Q: I found a bug. What can I do with it?**
 
-A: You can report it <a href="https://github.com/pietrek777/AntiDDoS/issues" target="_blank">here</a>. I will fix it as soon as possible. Thanks in advance for any bugs reports!
+A: You can report it <a href="https://github.com/pietrek777/AntiBots/issues" target="_blank">here</a>. I will fix it as soon as possible. Thanks in advance for any bugs reports!
 
 **Q: I have an idea, that can make this plugin better!**
 
-A:  Tell me more about it! [Contact me](#contact), or [create a new pull request](https://github.com/pietrek777/AntiDDoS/pulls)!
+A:  Tell me more about it! [Contact me](#contact), or [create a new pull request](https://github.com/pietrek777/AntiBots/pulls)!
 
 **Q: Do you know any good free hosting?**
 
@@ -119,7 +119,7 @@ A:  To be honest, ~~all~~ most of free hostings sucks. Annoying ads, limited FTP
 
 **Q: I want to remake this software by myself. Can I?**
 
-A:  Surely, you can. AntiDDoS is on <a href="https://github.com/pietrek777/AntiDDoS/blob/master/LICENSE" target="_blank">MIT license</a>, so you can fork it, make some changes and publish it. You can even sell your remake, but you should give a link to the orginal.
+A:  Surely, you can. AntiBots is on <a href="https://github.com/pietrek777/AntiBots/blob/master/LICENSE" target="_blank">MIT license</a>, so you can fork it, make some changes and publish it. You can even sell your remake, but you should give a link to the orginal.
 
 **Q: There's no answer for my question here/I want to ask you something**
 
@@ -130,4 +130,4 @@ Email address: <a href="mailto:pietrek777@gmail.com" target="_blank">pietrek777@
 
 
 -------
-**AntiDDoS plugin by <a href="https://github.com/pietrek777" target="_blank">pietrek777</a> – Distributed on <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>**
+**AntiBots plugin by <a href="https://github.com/pietrek777" target="_blank">pietrek777</a> – Distributed on <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>**

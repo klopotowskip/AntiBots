@@ -1,8 +1,8 @@
-// AntiDDoS Plugin by pietrek777
+// AntiBots Plugin by pietrek777
 // Distributed on MIT License
-// This project on Github: https://github.com/pietrek777/AntiDDoS
+// This project on Github: https://github.com/pietrek777/AntiBots
 
-package pl.mccode.antiddos.util;
+package pl.mccode.antibots.util;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

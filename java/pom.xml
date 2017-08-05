@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.mccode</groupId>
-    <artifactId>antiddos</artifactId>
-    <version>1.0</version>
+    <artifactId>antibots</artifactId>
+    <version>1.0.1</version>
 
     <repositories>
         <repository>
