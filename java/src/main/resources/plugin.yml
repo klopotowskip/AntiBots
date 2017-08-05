@@ -1,4 +1,4 @@
-  name: AntiBots
+name: AntiBots
 version: 1.0.1
 author: pietrek777
 main: pl.mccode.antibots.Main:
