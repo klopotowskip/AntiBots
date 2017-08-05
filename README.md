@@ -52,7 +52,7 @@ You can also download builded packages, ready to deploy on your server <a href="
 
 ### Bukkit/Spigot side configuration
  * Place plugin JAR in your server **./plugins** folder, and run your server (or type */reload* command)
- * Go to **./plugins/AntiDDoS/** and open **config.yml**. There are also some things to configurate here
+ * Go to **./plugins/AntiDDoS/** and open **config.yml**. There are also some things to configure here
   - **protection ➔ enabled-default** – is AntiDDoS protection will be launched on start
   - **protection ➔ kick-message** – message, that will be displayed to not-verified players on kick
   - **protection ➔ verification-url** – URL, where players can verify their accounts (so if your domain is example.com and you placed files into domain root, the URL will be *http://example.com/*)
