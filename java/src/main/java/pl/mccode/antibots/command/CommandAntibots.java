@@ -1,6 +1,7 @@
 // AntiBots Plugin by pietrek777
 // Distributed on MIT License
-// This project on Github: https://github.com/pietrek777/AntiBots
+// This project on GitHub: https://github.com/pietrek777/AntiBots
+// This project on SpigotMC: https://www.spigotmc.org/resources/antibots.45137/
 
 package pl.mccode.antibots.command;
 
@@ -89,9 +90,9 @@ public class CommandAntibots implements CommandExecutor{
 			return;
 		}
 		sender.sendMessage(Main.PLUGIN_PREFIX + " by pietrek777");
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Version v1.0"));
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9This plugin on SpigotMC: &f(soon)"));
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9This plugin on Github: &fhttps://github.com/pietrek777/AntiBots"));
+        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Version v1.1"));
+		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9This plugin on SpigotMC: &fhttps://www.spigotmc.org/resources/antibots.45137/"));
+		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&9Sourcecode and full documentation on Github: &fhttps://github.com/pietrek777/AntiBots"));
 	}
 	private void disable(CommandSender sender){
 		if(!sender.hasPermission("antibots.disable")){
@@ -165,7 +166,7 @@ public class CommandAntibots implements CommandExecutor{
 			return;
 		}
 		boolean b = Boolean.parseBoolean(bool);
-		Main.config().set(Main.BOTS_PROTECTION_KEY, b);
+		Main.config().set(Main.PROTECTION_KEY, b);
 		Main.instance().saveConfig();
 		sender.sendMessage(Main.PLUGIN_PREFIX + "You changed default protection to " + b + " ");
 	}

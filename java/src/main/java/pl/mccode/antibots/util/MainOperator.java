@@ -1,6 +1,7 @@
 // AntiBots Plugin by pietrek777
 // Distributed on MIT License
-// This project on Github: https://github.com/pietrek777/AntiBots
+// This project on GitHub: https://github.com/pietrek777/AntiBots
+// This project on SpigotMC: https://www.spigotmc.org/resources/antibots.45137/
 
 
 package pl.mccode.antibots.util;
@@ -20,18 +21,19 @@ import java.util.List;
 
 public class MainOperator {
 	public static void wipe() throws Exception{
-	    ConfigDataProvider cdp = ConfigDataProvider.getInstance();
-        HttpClient httpClient = HttpClients.createDefault();
-        HttpPost request = new HttpPost(cdp.getWipeUrl());
+		DataProvider dp = DataProvider.getInstance();
+		HttpClient httpClient = HttpClients.createDefault();
+		String root = dp.getVerificationRoot();
+		HttpPost request = new HttpPost(root + "wipe.php");
 
-        List<NameValuePair> params = new ArrayList<>(1);
-        params.add(new BasicNameValuePair("key", cdp.getWipeKey()));
-        request.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
+		List<NameValuePair> params = new ArrayList<>(1);
+		params.add(new BasicNameValuePair("key", dp.getWipeKey()));
+		request.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
 
-        HttpResponse response = httpClient.execute(request);
-        if(response==null) throw new Exception("Response is null");
-        int code = response.getStatusLine().getStatusCode();
-        if(code!=200) throw new Exception("Http response code: " + code);
+		HttpResponse response = httpClient.execute(request);
+		if(response==null) throw new Exception("Response is null");
+		int code = response.getStatusLine().getStatusCode();
+		if(code!=200) throw new Exception("Http response code: " + code);
 	}
 	public static void enableProtection(){
 		EventListener.protection = true;
@@ -54,6 +56,6 @@ public class MainOperator {
 				.forEach(x ->  x.kickPlayer(kickMessage()));
 	}
 	private static String kickMessage(){
-		return ConfigDataProvider.getInstance().getFormattedMessage();
+		return DataProvider.getInstance().getFormattedMessage();
 	}
 }

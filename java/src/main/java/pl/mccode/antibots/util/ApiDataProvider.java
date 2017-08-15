@@ -1,6 +1,7 @@
 // AntiBots Plugin by pietrek777
 // Distributed on MIT License
-// This project on Github: https://github.com/pietrek777/AntiBots
+// This project on GitHub: https://github.com/pietrek777/AntiBots
+// This project on SpigotMC: https://www.spigotmc.org/resources/antibots.45137/
 
 package pl.mccode.antibots.util;
 
@@ -20,9 +21,9 @@ public class ApiDataProvider {
 		return instance;
 	}
 	private ApiDataProvider(){}
-	private ConfigDataProvider cdp;
 	private String getResponseString(String nickname) throws Exception{
-		URL url = new URL("http://"+ cdp.getHost() + ":" + cdp.getPort() + "/" + cdp.getPath() + "?" + cdp.getGetParam() + "=" + nickname);
+		DataProvider dp = DataProvider.getInstance();
+		URL url = new URL(dp.getVerificationRoot() + "api.php?nickname=" + nickname);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod("GET");
 		connection.setRequestProperty("Accept", "application/json");
@@ -43,11 +44,10 @@ public class ApiDataProvider {
 
 	public boolean testFor(String nickname) throws Exception{
 		nickname = nickname.toLowerCase();
-		cdp = ConfigDataProvider.getInstance();
 		JSONParser jsonParser = new JSONParser();
 		JSONObject jsonObject = (JSONObject) jsonParser.parse(getResponseString(nickname));
-		if((Boolean) jsonObject.get(cdp.getOutcome())){
-			return (Boolean) jsonObject.get(cdp.getResult());
+		if((Boolean) jsonObject.get("outcome")){
+			return (Boolean) jsonObject.get("result");
 		} else throw new Exception();
 
 	}
