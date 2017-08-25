@@ -70,7 +70,7 @@ public class DataProvider {
         this.wipeKey = config.getString(Main.WIPE_KEY);
         this.whitelist = config.getStringList(Main.WHITELIST_KEY);
 
-        this.formattedMessage = String.format(ChatColor.translateAlternateColorCodes('&', getKickMessage()), root + "verification.php");
+        this.formattedMessage = String.format(ChatColor.translateAlternateColorCodes('&', getKickMessage()), root);
 
     }
 }
