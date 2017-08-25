@@ -2,6 +2,12 @@
 
   require_once 'resources/Utils.php';
   session_start();
+  
+  try{
+	  $pdo = getConnection();
+  } catch(Exception $e){
+	  die("<h1>Couldn't establish connection with database. Check your database credentials in resources/verification.php and try again</h1>");
+  }
   if(isset($_POST['submit'])){
     try{
       if(empty($_POST['nickname'])) sendError($nickerr);
@@ -21,7 +27,6 @@
       $response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha), true);
       if(!$response['success']) sendError($captchaerr);
 
-      $pdo = getConnection();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       $pdo->query("CREATE DATABASE IF NOT EXISTS ".$dbname);
@@ -41,6 +46,7 @@
       $_SESSION['error'] = $serverr;
     }catch(Exception $e2){}
   }
+  unset($pdo);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
