@@ -1,7 +1,4 @@
 <?php
-// AntiBots Plugin by pietrek777
-// Distributed on MIT License
-// This project on Github: https://github.com/pietrek777/AntiBots
 
   require_once 'resources/Utils.php';
   session_start();
@@ -19,17 +16,14 @@
       $userIp = getClientIp();
       if(!$userIp) sendError($iperr);
 
-      //Checking user captcha
       $captcha=$_POST['g-recaptcha-response'];
       if(!$captcha) sendError($captchaerr);
       $response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha), true);
       if(!$response['success']) sendError($captchaerr);
 
-      //Connecting with database
       $pdo = getConnection();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-      //Creating database and table(if not exists)
       $pdo->query("CREATE DATABASE IF NOT EXISTS ".$dbname);
       $pdo->query("use ".$dbname);
       $pdo->query("CREATE TABLE IF NOT EXISTS ".$tablename." (
@@ -40,7 +34,6 @@
         PRIMARY KEY (`user_id`))
         CHARACTER SET utf8 COLLATE utf8_general_ci");
 
-      //Saving user in database
       $insert_statement = $pdo->query("INSERT INTO `users` (`nickname`, `ip_address`) VALUES ('$nickname', '$userIp') ON DUPLICATE KEY UPDATE ip_address='$userIp';");
       sendSuccess($success);
     }catch(PDOException $e){
@@ -76,13 +69,11 @@
     <main role="main">
       <div class="form-box">
         <?php
-          //A box with error messages.
           if(isset($_SESSION['error'])){
             echo '<div class="error">'.$_SESSION['error'].'</div>';
             unset($_SESSION['error']);
           }
 
-          //A box with success messages.
           if(isset($_SESSION['success'])){
             echo '<div class="success">'.$_SESSION['success'].'</div>';
             unset($_SESSION['success']);
