@@ -31,7 +31,7 @@ After that go to target folder. File __antibots-x.x-jar-with-dependencies.jar__
 You can also download builded packages, ready to deploy on your server <a href="https://github.com/pietrek777/AntiBots/releases" target="_blank">here</a>
 
 ## Video tutorials
-(Coming soon)
+[![AntiBots – Installation Tutorial](https://img.youtube.com/vi/Zzk7koKq0Kk/0.jpg)](https://www.youtube.com/watch?v=Zzk7koKq0Kk)
 ## Instalation
 ### PHP side configuration
  * Download AntiBots package (or build it from sourcecode if you really want)
@@ -55,16 +55,9 @@ You can also download builded packages, ready to deploy on your server <a href="
  * Go to **./plugins/AntiBots/** and open **config.yml**. There are also some things to configure here
   - **protection ➔ enabled-default** – is AntiBots protection will be launched on start
   - **protection ➔ kick-message** – message, that will be displayed to not-verified players on kick
-  - **protection ➔ verification-url** – URL, where players can verify their accounts (so if your domain is example.com and you placed files into domain root, the URL will be *http://example.com/*)
-  - **connection ➔ host** – your domain name (e.g. http://example.com)
-  - **connection ➔ port** – propably you don't have to change it, port 80 is default HTTP port (see [HTTP session](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP_session))
-  - **connection ➔ path** – if you placed files in your domain root, just leave *api.php* value (however if you placed files in e.g. /verification change it to "/verification/api.php")
-  -  **~~connection ➔ get-param~~** (deprecated) – just leave it as it is
-  -  **wipe ➔ url** – URL for your **wipe.php** file
-  - **wipe ➔ secret-key** (not to be mistaken with reCAPTCHA secret key) – paste here **wipe-password** from verification.ini (this password is generated on first visit to verification site, if you don't have the password, enter the verification site)
-  -  **~~response ➔ outcome~~** (deprecated) – just leave it as it is
-  -  **~~response ➔ result~~** (deprecated) – just leave it as it is
- * Restart your server (or type */reload* command)
+  - **protection ➔ kick-message** – message, that will be displayed to not-verified players on kick
+  - **protection ➔ whitelist** – list of nicknames, that will avoid verification (use it carefully), [see YAML list](http://docs.ansible.com/ansible/latest/YAMLSyntax.html#yaml-basics)
+  - **connection ➔ wipe-key** (not to be mistaken with reCAPTCHA keys!) – paste here **wipe-password** from verification.ini (this password is generated on first visit to verification site, if you don't have the password, enter the verification site)
 
    > **config.yml**  template is also available <a href="https://pastebin.com/tHwqNiSG" target="_blank">here</a>
 
