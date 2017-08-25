@@ -6,6 +6,7 @@
   try{
 	  $pdo = getConnection();
   } catch(Exception $e){
+	  header('HTTP/1.1 500 Internal Server Error');
 	  die("<h1>Couldn't establish connection with database. Check your database credentials in resources/verification.php and try again</h1>");
   }
   if(isset($_POST['submit'])){
